@@ -1,6 +1,8 @@
-# Proxmox VE Setup from a mac running MacOS X
+# Proxmox VE Setup
 
-Cloning a Debian 7 Linux physical machine and running it on Proxmox VE 4.2.
+The following explains how to clone a Debian 7 Linux physical machine and run it on Proxmox VE 4.2.
+
+All operations are done from MacOS X. The Proxmox distro is installed on an Intel NUC hardware.
 
 ## Create a USB bootable disk containing Clonezilla from MacOS X
 
@@ -15,6 +17,10 @@ sudo dd if=/tmp/clonezilla-live.iso of=/dev/diskXXXX
 ```
 
 Press ctrl+t to check progress.
+
+## Run Clonezilla on Intel NUC
+
+
 
 ## Create USB bootable disk containing Proxmox from MacOS X
 
