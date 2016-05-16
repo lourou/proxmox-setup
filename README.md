@@ -1,12 +1,22 @@
-# Proxmox Setup
+# Proxmox VE Setup from a mac running MacOS X
 
-Proxmox 4.2 setup for running Debian virtual machines
+Cloning a Debian 7 Linux physical machine and running it on Proxmox VE 4.2.
 
-## Create USB disk image from MaxOS X
+## Create a USB bootable disk containing Clonezilla from MacOS X
 
-Instructions for OS X : OS X can use dd as the unix systems, but first requires the ISO image to be converted
-before it can be copied over to the USB stick. First you will need to download the ISO image, then plug in the USB Stick.
-To get the device name by running 'diskutil list'.
+ - Download a Clonezilla Live .iso from here: <http://clonezilla.org/downloads/download.php?branch=stable> 
+ - Insert USB key and run `diskutil list` from the terminal to ifentify the device name
+ - Identify the USB disk device name, for example `/dev/disk4`
+ - Unmount / eject the USB disk using umount or Disk Utility
+ - Copy the .iso disk image to the USB key. Warning, make sure you point to the right disk and make sure not to erase your own hard drive with this command.
+
+```
+sudo dd if=/tmp/clonezilla-live.iso of=/dev/diskXXXX
+```
+
+Press ctrl+t to check progress.
+
+## Create USB bootable disk containing Proxmox from MacOS X
 
 This command will output all the disk attached to the system, you should be able to match up the USB stick
 to the specs and name of one listed. To get the raw device, you can add an 'r' in front of the name,
